@@ -45,10 +45,9 @@ class PostsListController: UIViewController {
     }
     
     func setupTableView() {
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: PostsListControllerCellIdentifier)
-        tableView.delegate = postsListModel
-        tableView.dataSource = postsListModel
-        postsListModel.postSelected = postSelected
+        postsListModel.tableView = tableView
+        postsListModel.postSelectedCallback = postSelected
+        postsListModel.fetchPosts()
     }
     
     func postSelected(post: TPPost) {
@@ -58,23 +57,44 @@ class PostsListController: UIViewController {
 
 class PostsListModel: NSObject, UITableViewDataSource, UITableViewDelegate {
     
+    var tableView: UITableView? {
+        didSet {
+            tableView?.registerClass(UITableViewCell.self, forCellReuseIdentifier: PostsListControllerCellIdentifier)
+            tableView?.delegate = self
+            tableView?.dataSource = self
+        }
+    }
+
     var posts: [TPPost] = []
-    var postSelected: ((post: TPPost) -> Void)? = nil
+    var postSelectedCallback: ((post: TPPost) -> Void)? = nil
+    
+    // MARK: Networking
+    
+    func fetchPosts() {
+        TPNetworking.getPosts { [weak self] (posts, error) -> () in
+            self?.posts = posts ?? []
+            self?.reloadTableView()
+            if let err = error {
+                println("Error fetching posts: \(error)")
+            }
+        }
+    }
+    
+    // MARK: TableView
+    
+    func reloadTableView() {
+        tableView?.reloadData()
+    }
     
     // MARK: UITableViewDataSource
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1;
-    }
-    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10;
+        return posts.count;
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(PostsListControllerCellIdentifier, forIndexPath: indexPath) as? UITableViewCell
-        cell?.textLabel?.text = "Hey"
-        cell?.detailTextLabel?.text = "Sup"
+        cell?.textLabel?.text = posts[indexPath.row].title
         return cell!;
     }
     
@@ -82,6 +102,6 @@ class PostsListModel: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        postSelected?(post: TPPost())
+        postSelectedCallback?(post: TPPost())
     }
 }
