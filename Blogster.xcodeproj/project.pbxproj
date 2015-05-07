@@ -7,11 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D21FD75DA6EAB0D018A114F /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C38EB7D290DEB428F26083D /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		80AB914F1AFC25AD00789F11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB914E1AFC25AD00789F11 /* AppDelegate.swift */; };
 		80AB91511AFC25AD00789F11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB91501AFC25AD00789F11 /* ViewController.swift */; };
 		80AB91561AFC25AD00789F11 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80AB91551AFC25AD00789F11 /* Images.xcassets */; };
 		80AB91591AFC25AD00789F11 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80AB91571AFC25AD00789F11 /* LaunchScreen.xib */; };
 		80AB91651AFC25AD00789F11 /* BlogsterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB91641AFC25AD00789F11 /* BlogsterTests.swift */; };
+		80AB91751AFC26A100789F11 /* TPTransformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB91701AFC26A100789F11 /* TPTransformers.swift */; };
+		80AB91761AFC26A100789F11 /* TPPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB91711AFC26A100789F11 /* TPPost.swift */; };
+		80AB91771AFC26A100789F11 /* TPEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB91731AFC26A100789F11 /* TPEndpoints.swift */; };
+		80AB91781AFC26A100789F11 /* TPNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB91741AFC26A100789F11 /* TPNetworking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C38EB7D290DEB428F26083D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		204111A8651871CD4F099EF8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		80AB91491AFC25AD00789F11 /* Blogster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blogster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80AB914D1AFC25AD00789F11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80AB914E1AFC25AD00789F11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +41,11 @@
 		80AB915E1AFC25AD00789F11 /* BlogsterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlogsterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80AB91631AFC25AD00789F11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80AB91641AFC25AD00789F11 /* BlogsterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogsterTests.swift; sourceTree = "<group>"; };
+		80AB91701AFC26A100789F11 /* TPTransformers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TPTransformers.swift; sourceTree = "<group>"; };
+		80AB91711AFC26A100789F11 /* TPPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TPPost.swift; sourceTree = "<group>"; };
+		80AB91731AFC26A100789F11 /* TPEndpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TPEndpoints.swift; sourceTree = "<group>"; };
+		80AB91741AFC26A100789F11 /* TPNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TPNetworking.swift; sourceTree = "<group>"; };
+		B805A6C96FC5AE81AD98871F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D21FD75DA6EAB0D018A114F /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,12 +67,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34754EDBE73E6E3E0C4FEEBD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				204111A8651871CD4F099EF8 /* Pods.debug.xcconfig */,
+				B805A6C96FC5AE81AD98871F /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		80AB91401AFC25AD00789F11 = {
 			isa = PBXGroup;
 			children = (
 				80AB914B1AFC25AD00789F11 /* Blogster */,
 				80AB91611AFC25AD00789F11 /* BlogsterTests */,
 				80AB914A1AFC25AD00789F11 /* Products */,
+				34754EDBE73E6E3E0C4FEEBD /* Pods */,
+				E5CA28A3DFF4E85C8A7EBF3E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +99,8 @@
 		80AB914B1AFC25AD00789F11 /* Blogster */ = {
 			isa = PBXGroup;
 			children = (
+				80AB916E1AFC26A100789F11 /* Models */,
+				80AB91721AFC26A100789F11 /* Networking */,
 				80AB914E1AFC25AD00789F11 /* AppDelegate.swift */,
 				80AB91501AFC25AD00789F11 /* ViewController.swift */,
 				80AB91551AFC25AD00789F11 /* Images.xcassets */,
@@ -109,6 +135,40 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		80AB916E1AFC26A100789F11 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				80AB916F1AFC26A100789F11 /* Mapping */,
+				80AB91711AFC26A100789F11 /* TPPost.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		80AB916F1AFC26A100789F11 /* Mapping */ = {
+			isa = PBXGroup;
+			children = (
+				80AB91701AFC26A100789F11 /* TPTransformers.swift */,
+			);
+			path = Mapping;
+			sourceTree = "<group>";
+		};
+		80AB91721AFC26A100789F11 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				80AB91731AFC26A100789F11 /* TPEndpoints.swift */,
+				80AB91741AFC26A100789F11 /* TPNetworking.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		E5CA28A3DFF4E85C8A7EBF3E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C38EB7D290DEB428F26083D /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -116,9 +176,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 80AB91681AFC25AD00789F11 /* Build configuration list for PBXNativeTarget "Blogster" */;
 			buildPhases = (
+				C39732C679129A04B5F3CE97 /* Check Pods Manifest.lock */,
 				80AB91451AFC25AD00789F11 /* Sources */,
 				80AB91461AFC25AD00789F11 /* Frameworks */,
 				80AB91471AFC25AD00789F11 /* Resources */,
+				8E728FE11E7CF0108BB2E838 /* Embed Pods Frameworks */,
+				85A0458F23370F1B8279888E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -203,13 +266,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		85A0458F23370F1B8279888E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8E728FE11E7CF0108BB2E838 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C39732C679129A04B5F3CE97 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		80AB91451AFC25AD00789F11 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80AB91751AFC26A100789F11 /* TPTransformers.swift in Sources */,
+				80AB91761AFC26A100789F11 /* TPPost.swift in Sources */,
 				80AB91511AFC25AD00789F11 /* ViewController.swift in Sources */,
+				80AB91771AFC26A100789F11 /* TPEndpoints.swift in Sources */,
 				80AB914F1AFC25AD00789F11 /* AppDelegate.swift in Sources */,
+				80AB91781AFC26A100789F11 /* TPNetworking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +441,7 @@
 		};
 		80AB91691AFC25AD00789F11 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 204111A8651871CD4F099EF8 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Blogster/Info.plist;
@@ -336,6 +452,7 @@
 		};
 		80AB916A1AFC25AD00789F11 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B805A6C96FC5AE81AD98871F /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Blogster/Info.plist;
