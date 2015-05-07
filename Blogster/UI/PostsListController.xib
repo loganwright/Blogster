@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostsListController" customModule="Blogster" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="H35-BT-SqR" id="0mh-3C-Y8g"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,7 +14,23 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="H35-BT-SqR">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" red="0.97647058819999999" green="0.23921568630000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="H35-BT-SqR" secondAttribute="bottom" id="Ehx-m2-hVh"/>
+                <constraint firstItem="H35-BT-SqR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="K3B-Tq-p90"/>
+                <constraint firstAttribute="bottom" secondItem="H35-BT-SqR" secondAttribute="bottom" id="Reo-p5-fmg"/>
+                <constraint firstAttribute="trailing" secondItem="H35-BT-SqR" secondAttribute="trailing" id="TkO-EG-3ai"/>
+                <constraint firstAttribute="trailing" secondItem="H35-BT-SqR" secondAttribute="trailing" id="U2n-Ks-Mc2"/>
+                <constraint firstItem="H35-BT-SqR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="WA3-tj-gKv"/>
+                <constraint firstItem="H35-BT-SqR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bzN-Dc-vIm"/>
+                <constraint firstItem="H35-BT-SqR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="rez-F2-V9e"/>
+            </constraints>
         </view>
     </objects>
 </document>
