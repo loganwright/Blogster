@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4D21FD75DA6EAB0D018A114F /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C38EB7D290DEB428F26083D /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		80AB914F1AFC25AD00789F11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB914E1AFC25AD00789F11 /* AppDelegate.swift */; };
-		80AB91511AFC25AD00789F11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB91501AFC25AD00789F11 /* ViewController.swift */; };
 		80AB91561AFC25AD00789F11 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80AB91551AFC25AD00789F11 /* Images.xcassets */; };
 		80AB91591AFC25AD00789F11 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80AB91571AFC25AD00789F11 /* LaunchScreen.xib */; };
 		80AB91651AFC25AD00789F11 /* BlogsterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB91641AFC25AD00789F11 /* BlogsterTests.swift */; };
@@ -37,7 +36,6 @@
 		80AB91491AFC25AD00789F11 /* Blogster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blogster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80AB914D1AFC25AD00789F11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80AB914E1AFC25AD00789F11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		80AB91501AFC25AD00789F11 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		80AB91551AFC25AD00789F11 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		80AB91581AFC25AD00789F11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		80AB915E1AFC25AD00789F11 /* BlogsterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlogsterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,7 +105,6 @@
 				80AB91721AFC26A100789F11 /* Networking */,
 				80AB91791AFC2B8200789F11 /* UI */,
 				80AB914E1AFC25AD00789F11 /* AppDelegate.swift */,
-				80AB91501AFC25AD00789F11 /* ViewController.swift */,
 				80AB91551AFC25AD00789F11 /* Images.xcassets */,
 				80AB91571AFC25AD00789F11 /* LaunchScreen.xib */,
 				80AB914C1AFC25AD00789F11 /* Supporting Files */,
@@ -337,7 +334,6 @@
 				80AB91751AFC26A100789F11 /* TPTransformers.swift in Sources */,
 				80AB91761AFC26A100789F11 /* TPPost.swift in Sources */,
 				80AB917C1AFC2BB900789F11 /* PostsListController.swift in Sources */,
-				80AB91511AFC25AD00789F11 /* ViewController.swift in Sources */,
 				80AB91771AFC26A100789F11 /* TPEndpoints.swift in Sources */,
 				80AB914F1AFC25AD00789F11 /* AppDelegate.swift in Sources */,
 				80AB91781AFC26A100789F11 /* TPNetworking.swift in Sources */,
