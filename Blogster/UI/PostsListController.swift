@@ -48,11 +48,18 @@ class PostsListController: UIViewController {
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: PostsListControllerCellIdentifier)
         tableView.delegate = postsListModel
         tableView.dataSource = postsListModel
+        postsListModel.postSelected = postSelected
+    }
+    
+    func postSelected(post: TPPost) {
+        println("Selected Post")
     }
 }
 
 class PostsListModel: NSObject, UITableViewDataSource, UITableViewDelegate {
+    
     var posts: [TPPost] = []
+    var postSelected: ((post: TPPost) -> Void)? = nil
     
     // MARK: UITableViewDataSource
     
@@ -69,5 +76,12 @@ class PostsListModel: NSObject, UITableViewDataSource, UITableViewDelegate {
         cell?.textLabel?.text = "Hey"
         cell?.detailTextLabel?.text = "Sup"
         return cell!;
+    }
+    
+    // MARK: UITableViewDelegate
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        postSelected?(post: TPPost())
     }
 }
