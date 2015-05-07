@@ -17,6 +17,8 @@
 		80AB91761AFC26A100789F11 /* TPPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB91711AFC26A100789F11 /* TPPost.swift */; };
 		80AB91771AFC26A100789F11 /* TPEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB91731AFC26A100789F11 /* TPEndpoints.swift */; };
 		80AB91781AFC26A100789F11 /* TPNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB91741AFC26A100789F11 /* TPNetworking.swift */; };
+		80AB917C1AFC2BB900789F11 /* PostsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB917A1AFC2BB900789F11 /* PostsListController.swift */; };
+		80AB917D1AFC2BB900789F11 /* PostsListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80AB917B1AFC2BB900789F11 /* PostsListController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		80AB91711AFC26A100789F11 /* TPPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TPPost.swift; sourceTree = "<group>"; };
 		80AB91731AFC26A100789F11 /* TPEndpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TPEndpoints.swift; sourceTree = "<group>"; };
 		80AB91741AFC26A100789F11 /* TPNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TPNetworking.swift; sourceTree = "<group>"; };
+		80AB917A1AFC2BB900789F11 /* PostsListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostsListController.swift; path = UI/PostsListController.swift; sourceTree = "<group>"; };
+		80AB917B1AFC2BB900789F11 /* PostsListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostsListController.xib; path = UI/PostsListController.xib; sourceTree = "<group>"; };
 		B805A6C96FC5AE81AD98871F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,6 +105,7 @@
 			children = (
 				80AB916E1AFC26A100789F11 /* Models */,
 				80AB91721AFC26A100789F11 /* Networking */,
+				80AB91791AFC2B8200789F11 /* UI */,
 				80AB914E1AFC25AD00789F11 /* AppDelegate.swift */,
 				80AB91501AFC25AD00789F11 /* ViewController.swift */,
 				80AB91551AFC25AD00789F11 /* Images.xcassets */,
@@ -159,6 +164,15 @@
 				80AB91741AFC26A100789F11 /* TPNetworking.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		80AB91791AFC2B8200789F11 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				80AB917A1AFC2BB900789F11 /* PostsListController.swift */,
+				80AB917B1AFC2BB900789F11 /* PostsListController.xib */,
+			);
+			name = UI;
 			sourceTree = "<group>";
 		};
 		E5CA28A3DFF4E85C8A7EBF3E /* Frameworks */ = {
@@ -253,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80AB91591AFC25AD00789F11 /* LaunchScreen.xib in Resources */,
+				80AB917D1AFC2BB900789F11 /* PostsListController.xib in Resources */,
 				80AB91561AFC25AD00789F11 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,6 +336,7 @@
 			files = (
 				80AB91751AFC26A100789F11 /* TPTransformers.swift in Sources */,
 				80AB91761AFC26A100789F11 /* TPPost.swift in Sources */,
+				80AB917C1AFC2BB900789F11 /* PostsListController.swift in Sources */,
 				80AB91511AFC25AD00789F11 /* ViewController.swift in Sources */,
 				80AB91771AFC26A100789F11 /* TPEndpoints.swift in Sources */,
 				80AB914F1AFC25AD00789F11 /* AppDelegate.swift in Sources */,
