@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateEditPostController" customModule="Blogster" customModuleProvider="target">
             <connections>
                 <outlet property="bodyTextView" destination="I67-oZ-Xv5" id="c05-9J-wt4"/>
+                <outlet property="bodyTextViewBottomConstraint" destination="k24-10-zHx" id="iij-P3-6vz"/>
                 <outlet property="titleTextField" destination="afx-1o-YiX" id="2vv-Q2-k7r"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
