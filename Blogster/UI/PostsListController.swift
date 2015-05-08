@@ -58,7 +58,7 @@ class PostsListController: UIViewController {
     }
     
     func postSelected(post: TPPost) {
-        println("Selected Post")
+        navigationController?.pushViewController(CreateEditPostController(post: post), animated: true)
     }
     
     // MARK: Button Presses
@@ -120,6 +120,6 @@ class PostsListModel: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        postSelectedCallback?(post: TPPost())
+        postSelectedCallback?(post: posts[indexPath.row])
     }
 }
