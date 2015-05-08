@@ -61,11 +61,18 @@ class CreateEditPostController: UIViewController {
     
     func setupTextView() {
         bodyTextView.shouldResize = false
+        bodyTextView.text = createEditModel.textViewText
     }
     
     func setupNavigationBar() {
         title = createEditModel.navigationTitle
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Save, target: self, action: "saveButtonPressed:")
+        let saveButton = UIBarButtonItem(barButtonSystemItem: .Save, target: self, action: "saveButtonPressed:")
+        if createEditModel.isEditing {
+            let deleteButton = UIBarButtonItem(barButtonSystemItem: .Trash, target: self, action: "deleteButtonPressed:")
+            navigationItem.rightBarButtonItems = [saveButton, deleteButton]
+        } else {
+            navigationItem.rightBarButtonItem = saveButton
+        }
     }
     
     private func setupKeyboardListeners() {
@@ -81,6 +88,10 @@ class CreateEditPostController: UIViewController {
         bodyTextView.resignFirstResponder()
     }
 
+    func deleteButtonPressed(sender: UIBarButtonItem) {
+        println("delete")
+    }
+    
     // MARK: Keyboard Listeners
     
     func keyboardWillShow(note: NSNotification) {
@@ -115,12 +126,20 @@ class CreateEditPostController: UIViewController {
 class CreateEditPostControllerModel {
     private(set) var post: TPPost?
     
+    var isEditing: Bool {
+        return post != nil
+    }
+    
     var navigationTitle: String {
-        return post?.title ?? "New Post"
+        return isEditing ? "Edit Post" : "New Post"
     }
     
     var textFieldText: String {
         return post?.title ?? "Enter Title Here"
+    }
+    
+    var textViewText: String? {
+        return post?.body
     }
     
     // MARK: Initialization
