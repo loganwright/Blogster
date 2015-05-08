@@ -68,7 +68,7 @@ class PostsListController: UIViewController {
     }
     
     func addPostButtonPressed(sender: UIBarButtonItem) {
-        println("Add post!")
+        navigationController?.pushViewController(CreateEditPostController(), animated: true)
     }
     
 }
