@@ -33,6 +33,11 @@ class PostsListController: UIViewController {
         setup()
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        postsListModel.fetchPosts()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -83,7 +88,16 @@ class PostsListModel: NSObject, UITableViewDataSource, UITableViewDelegate {
         }
     }
 
-    var posts: [TPPost] = []
+    var posts: [TPPost] = [] {
+        didSet {
+            posts = posts.sorted({ (lhs: TPPost, rhs: TPPost) -> Bool in
+                let leftInterval = lhs.updatedAt?.timeIntervalSince1970 ?? 0
+                let rightInterval = rhs.updatedAt?.timeIntervalSince1970 ?? 0
+                return leftInterval > rightInterval
+            })
+        }
+    }
+    
     var postSelectedCallback: ((post: TPPost) -> Void)? = nil
     
     // MARK: Networking
@@ -113,6 +127,7 @@ class PostsListModel: NSObject, UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(PostsListControllerCellIdentifier, forIndexPath: indexPath) as? UITableViewCell
         cell?.textLabel?.text = posts[indexPath.row].title
+        cell?.accessoryType = .DisclosureIndicator
         return cell!;
     }
     

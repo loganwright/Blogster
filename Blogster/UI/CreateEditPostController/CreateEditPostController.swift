@@ -56,7 +56,11 @@ class CreateEditPostController: UIViewController {
     }
     
     func setupTitleField() {
-        titleTextField.text = createEditModel.textFieldText
+        if createEditModel.isEditing {
+            titleTextField.text = createEditModel.textFieldText
+        } else {
+            titleTextField.placeholder = createEditModel.textFieldText
+        }
     }
     
     func setupTextView() {
@@ -84,12 +88,22 @@ class CreateEditPostController: UIViewController {
     // MARK: Button Presses
     
     func saveButtonPressed(sender: UIBarButtonItem) {
-        println("Save")
-        bodyTextView.resignFirstResponder()
+        if count(titleTextField.text) == 0 || count(bodyTextView.text) == 0 {
+            return
+        }
+        createEditModel.savePostWithTitle(titleTextField.text, body: bodyTextView.text) { [weak self] (success) -> () in
+            if success {
+                self?.navigationController?.popViewControllerAnimated(true)
+            }
+        }
     }
 
     func deleteButtonPressed(sender: UIBarButtonItem) {
-        println("delete")
+        createEditModel.deletePost() { [weak self] (success) -> () in
+            if success {
+                self?.navigationController?.popViewControllerAnimated(true)
+            }
+        }
     }
     
     // MARK: Keyboard Listeners
@@ -146,6 +160,29 @@ class CreateEditPostControllerModel {
     
     init(post: TPPost?) {
         self.post = post
+    }
+    
+    // MARK: Networking
+    
+    func savePostWithTitle(title: String, body: String, completion: (success: Bool) -> ()) {
+        let responseHandler = { (post: TPPost?, error: NSError?) -> () in
+            completion(success: error == nil)
+        }
+        if let _post = post {
+            TPNetworking.patchPostWIthId(_post.id, newTitle: title, newBody: body, completion: responseHandler)
+        } else {
+            TPNetworking.createPostWithTitle(title, body: body, completion: responseHandler)
+        }
+    }
+    
+    func deletePost(completion: (success: Bool) -> ()) {
+        if let _post = post {
+            TPNetworking.deletePostWIthId(_post.id) { (post, error) -> () in
+                completion(success: error == nil)
+            }
+        } else {
+            completion(success: false)
+        }
     }
 }
 
