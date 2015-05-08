@@ -9,25 +9,28 @@
 import UIKit
 
 class CreateEditPostController: UIViewController {
-
-    private(set) var post: TPPost?
+    
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var bodyTextView: StretchyTextView!
+    
+    var createEditModel: CreateEditPostControllerModel
     
     // MARK: Initialization
     
     init(post: TPPost? = nil) {
-        self.post = post
+        self.createEditModel = CreateEditPostControllerModel(post: post)
         super.init(nibName: "CreateEditPostController", bundle: nil)
-        setup()
     }
     
     required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        fatalError("Init w/ coder not implemented")
     }
     
     // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
         view.backgroundColor = UIColor.brownColor()
     }
 
@@ -39,11 +42,21 @@ class CreateEditPostController: UIViewController {
     // MARK: Setup
     
     func setup() {
+        setupTextView()
+        setupTitleField()
         setupNavigationBar()
     }
     
+    func setupTitleField() {
+        titleTextField.text = createEditModel.textFieldText
+    }
+    
+    func setupTextView() {
+        bodyTextView.shouldResize = false
+    }
+    
     func setupNavigationBar() {
-        title = post?.title ?? "New Post"
+        title = createEditModel.navigationTitle
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Save, target: self, action: "saveButtonPressed:")
     }
     
@@ -51,5 +64,23 @@ class CreateEditPostController: UIViewController {
     
     func saveButtonPressed(sender: UIBarButtonItem) {
         println("Save")
+    }
+}
+
+class CreateEditPostControllerModel {
+    private(set) var post: TPPost?
+    
+    var navigationTitle: String {
+        return post?.title ?? "New Post"
+    }
+    
+    var textFieldText: String {
+        return post?.title ?? "Enter Title Here"
+    }
+    
+    // MARK: Initialization
+    
+    init(post: TPPost?) {
+        self.post = post
     }
 }
