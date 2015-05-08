@@ -41,6 +41,7 @@ class PostsListController: UIViewController {
     // MARK: Setup
     
     func setup() {
+        setupNavigationBar()
         setupTableView()
     }
     
@@ -50,9 +51,26 @@ class PostsListController: UIViewController {
         postsListModel.fetchPosts()
     }
     
+    func setupNavigationBar() {
+        title = "Posts"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Refresh, target: self, action: "refreshButtonPressed:")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "addPostButtonPressed:")
+    }
+    
     func postSelected(post: TPPost) {
         println("Selected Post")
     }
+    
+    // MARK: Button Presses
+    
+    func refreshButtonPressed(sender: UIBarButtonItem) {
+        postsListModel.fetchPosts()
+    }
+    
+    func addPostButtonPressed(sender: UIBarButtonItem) {
+        println("Add post!")
+    }
+    
 }
 
 class PostsListModel: NSObject, UITableViewDataSource, UITableViewDelegate {

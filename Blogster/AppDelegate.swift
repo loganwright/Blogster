@@ -15,8 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        let nav = UINavigationController(rootViewController: PostsListController())
+        nav.navigationBar.translucent = false
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        window!.rootViewController = PostsListController()
+        window!.rootViewController = nav
         window!.makeKeyAndVisible()
         return true
     }
